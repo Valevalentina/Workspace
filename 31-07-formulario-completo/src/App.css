@@ -39,7 +39,7 @@ h1 {
   margin-bottom: 8px;
 }
 
-..field input[type='text'],
+.field input[type='text'],
 .field input[type='email'],
 .field input[type='password'],
 .field input[type='number'],

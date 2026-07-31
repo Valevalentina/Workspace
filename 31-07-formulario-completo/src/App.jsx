@@ -21,6 +21,7 @@ function App() {
   const [colorFavorito, setColorFavorito] = useState('#000000')
   const [resumen, setResumen] = useState(null)
   const [fotoPreview, setFotoPreview] = useState(null)
+  const [mensajeAcceso, setMensajeAcceso] = useState('')
 
   useEffect(() => {
     if (!foto) {
@@ -38,7 +39,9 @@ function App() {
 
   const emailValido = EMAIL_REGEX.test(email)
   const edadValida = edad === '' || Number(edad) > 0
-  const puedeEnviar = aceptaTerminos && emailValido && edadValida
+  const nombreValido = nombre.trim().length >= 2
+  const passwordValida = password.length >= 6
+  const puedeEnviar = nombreValido && emailValido && passwordValida
 
   const handleLenguajeChange = (event) => {
     const value = event.target.value
@@ -57,21 +60,37 @@ function App() {
   const handleSubmit = (event) => {
     event.preventDefault()
 
-    setResumen({
-      nombre,
-      email,
-      password,
-      edad: edad === '' ? '' : Number(edad),
-      fechaNacimiento,
-      experiencia,
-      aceptaTerminos,
-      lenguajes,
-      modalidad,
-      pais,
-      comentarios,
-      colorFavorito,
-      foto: foto?.name || 'No se agregó foto'
-    })
+    if (!nombreValido || !emailValido || !passwordValida) {
+      setResumen(null)
+      setMensajeAcceso('Completa tu nombre, usa un correo válido y una contraseña de al menos 6 caracteres.')
+      return
+    }
+
+    if (
+      (email.trim().toLowerCase() === 'admin@dominio.com' || email.trim().toLowerCase() === 'valentinalposada123@gmail.com') &&
+      (password === '123456' || password === 'Va3006264671')
+    ) {
+      setMensajeAcceso('Inicio de sesión correcto.')
+      setResumen({
+        nombre,
+        email,
+        password,
+        edad: edad === '' ? '' : Number(edad),
+        fechaNacimiento,
+        experiencia,
+        aceptaTerminos,
+        lenguajes,
+        modalidad,
+        pais,
+        comentarios,
+        colorFavorito,
+        foto: foto?.name || 'No se agregó foto'
+      })
+      return
+    }
+
+    setResumen(null)
+    setMensajeAcceso('Credenciales incorrectas. Prueba con admin@dominio.com, valentinalposada123@gmail.com y las contraseñas 123456 o Va3006264671.')
   }
 
   return (
@@ -79,6 +98,9 @@ function App() {
       <h1>Registro de estudiante</h1>
 
       <form className="form" onSubmit={handleSubmit} noValidate>
+        {mensajeAcceso ? (
+          <p className={mensajeAcceso.includes('correcto') ? 'success' : 'error'}>{mensajeAcceso}</p>
+        ) : null}
         <div className="field">
           <label htmlFor="nombre">Nombre</label>
           <input
@@ -250,7 +272,7 @@ function App() {
         </div>
 
         <button type="submit" disabled={!puedeEnviar} className="submit-button">
-          Enviar registro
+          Iniciar sesión
         </button>
       </form>
 
