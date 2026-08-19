@@ -1,15 +1,16 @@
 1. HTML
-HTML es el lenguaje de marcado básico para crear páginas web. Es básicamente la estructura o el esqueleto de la página, el que define el contenido sin ponerse a pensar todavía en el diseño o en la lógica rara.
+
+HTML es el lenguaje de marcado básico para crear páginas web. Es básicamente la estructura o el esqueleto de la página, el que define el contenido sin ponerse a pensar todavía en el diseño visual o en la lógica rara.
 
 Etiquetas de estructura de un HTML: Son las cajas principales que organizan la página para que tanto el navegador como Google entiendan cómo está repartido todo.
 
 <html>: Es la etiqueta raíz, la mamá de todas, que engloba absolutamente todo el código de la página.
 
-<head>: Va arriba pero no se ve en la pantalla. Ahí guardás la información interna de la página, el título de la pestaña y los enlaces a los archivos de CSS o fuentes.
+<head>: Va arriba pero no se ve en la pantalla. Ahí guardás la información interna de la página, el título de la pestaña y los enlaces a los archivos de CSS o fuentes externas.
 
 <body>: Contiene la parte visible del sitio web, todo lo que el usuario sí ve y usa, como imágenes, botones, formularios y párrafos.
 
-<header>: Es la cabecera del sitio web, donde casi siempre se pone el logotipo y el menú principal.
+<header>: Es la cabecera del sitio web, donde casi siempre se pone el logotipo y el menú de navegación principal.
 
 <nav>: Define la sección donde van los enlaces del menú para moverse por todo el sitio.
 
@@ -38,6 +39,7 @@ Etiquetas para agregar código: Sirven para inyectar código de diseño o de ló
 <em>: Muestra el texto en cursiva para darle énfasis a una palabra dentro de la oración.
 
 2. JavaScript
+
 JavaScript es el lenguaje de programación que le mete la chispa, la lógica y el movimiento a la página web. Es como el sistema nervioso del sitio.
 
 Variables, tipos de variables, constantes y globales:
@@ -48,7 +50,7 @@ Tipos de variables (let): Usamos let cuando sabemos que el valor de la variable 
 
 Constantes (const): Se usa const para guardar valores fijos que jamás van a cambiar ni se pueden modificar a lo largo del programa.
 
-Globales: Son variables creadas por fuera de cualquier función. Se pueden usar desde cualquier lugar del programa, pero hay que manejar de a mucho cuidado porque si se cambian por error desde otro lado, pueden dañar el código.
+Globales: Son variables creadas por fuera de cualquier función. Se pueden usar desde cualquier lugar del programa, pero hay que manejar con mucho cuidado porque si se cambian por error desde otro lado, pueden dañar el código.
 
 Estructuras de flujo: Son las instrucciones que le dicen al programa qué camino tomar o cuántas veces repetir algo.
 
@@ -57,6 +59,7 @@ Condicionales (if / else, switch): Evalúan una condición para tomar decisiones
 Bucles (for, while): Sirven para poner a repetir un bloque de código automáticamente varias veces mientras se cumpla una condición (por ejemplo, recorrer una lista de 50 productos para mostrarlos en pantalla uno por uno).
 
 3. CSS
+
 CSS es la capa del diseño. Es el que se encarga de poner la página bien bonita, separando la apariencia visual de la estructura del HTML.
 
 Selectores CSS y cómo modifican elementos:
@@ -72,6 +75,7 @@ Selector de ID (#mi-id): Apunta a un elemento único con ese identificador exclu
 Cómo modifican elementos: Le cambian las propiedades visuales a lo que seleccionaste. Pueden modificar el color de la letra (color), el fondo (background-color), el tamaño de la fuente (font-size), las márgenes (margin/padding) o cómo se acomodan en la pantalla usando maquetación moderna como Flexbox (display: flex).
 
 4. React
+
 React es una librería de JavaScript superpopular para construir interfaces de páginas web armándolas por módulos o fichas de Lego llamadas componentes.
 
 Analogía explicativa de un componente de React vs una etiqueta HTML:
